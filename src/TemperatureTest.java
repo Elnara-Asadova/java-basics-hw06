@@ -14,8 +14,9 @@ public class TemperatureTest {
     return new Object[][]{
         {212.0, 100.0},
         {32.0, 0.0},
-        {-15, -26.11111111111111}
-        // TODO add 2 more test data here
+        {-15, -26.11111111111111},
+        {0.0,-17.77777777777778},
+        {-4.0,-20.0}
     };
   }
 
@@ -28,8 +29,9 @@ public class TemperatureTest {
     return new Object[][]{
         {100.0, 212.0},
         {0.0, 32.0},
-        {-26.11111111111111, -15}
-        // TODO add 2 more test data here
+        {-26.11111111111111, -15},
+        {10.0,50.0},
+        {1.0,33.80}
     };
   }
 
@@ -42,8 +44,8 @@ public class TemperatureTest {
 
   @Test(dataProvider = "Celsius")
   public void testCelsiusToFahrenheit(double celsius, double expectedResult) {
-    double actulResult = Temperature.celsiusToFahrenheit(celsius);
+    double actualResult = Temperature.celsiusToFahrenheit(celsius);
 
-    assertEquals(actulResult, expectedResult, "Conversion from Celsius to Fahrenheit is wrong");
+    assertEquals(actualResult, expectedResult, "Conversion from Celsius to Fahrenheit is wrong");
   }
 }
